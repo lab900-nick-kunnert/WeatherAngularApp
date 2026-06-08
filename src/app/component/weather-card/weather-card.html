@@ -1,0 +1,22 @@
+@if (weather(); as weather) {
+  <div class="weather-card">
+
+    <div class="weather-card-header">
+      <h2 class="weather-card-city">{{ weather.city }}</h2>
+      <span class="weather-card__updated">Updated at {{ weather.time | date: 'HH:mm' }}</span>
+    </div>
+
+    <div class="weather-card-temp">{{ weather.temperature }}°C</div>
+
+    <div class="weather-card-stats">
+      <div class="weather-card-stat">
+        <span class="weather-card-stat-label">Wind</span>
+        <span class="weather-card-stat-value">{{ weather.windSpeed }} km/h</span>
+      </div>
+      <div class="weather-card-stat">
+        <span class="weather-card-stat-label">Humidity</span>
+        <span class="weather-card-stat-value">{{ weather.humidity }}%</span>
+      </div>
+    </div>
+  </div>
+}

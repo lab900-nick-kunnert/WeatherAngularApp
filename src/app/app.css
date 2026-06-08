@@ -1,0 +1,147 @@
+:host {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: block;
+  height: 100dvh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+  background-attachment: fixed;
+  color: #1a2533;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-height: 100%;
+}
+
+.search-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.search-bars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-input,
+.search-input-country {
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: inherit;
+  font-size: 1.25rem;
+  color: #1a2533;
+  text-align: center;
+  outline: none;
+  transition: box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.search-input {
+  width: 30rem;
+}
+
+.search-input-country {
+  width: 15rem;
+}
+
+.search-input:focus,
+.search-input-country:focus {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.search-input::placeholder,
+.search-input-country::placeholder {
+  color: #8896a3;
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: calc(3rem + 0.5rem);
+  left: 0;
+  width: 30rem;
+  max-height: 18rem;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.suggestion-item {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.suggestion-name {
+  font-size: 1rem;
+  color: #1a2533;
+  font-weight: 500;
+}
+
+.suggestion-meta {
+  font-size: 0.85rem;
+  color: #8896a3;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  flex: 0 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.weather-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.weather-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}

@@ -1,0 +1,26 @@
+<div class="hourly-weather-info">
+
+  <h2 class="hourly-weather-info__title">Hourly forecast</h2>
+
+  @if (hourlyWeatherInfo(); as hourly) {
+    <div class="hourly-weather-info-list">
+
+      @for (h of (hourly | hourlyWeatherFrom: now); track h.time.getTime()) {
+        <div class="hourly-weather-info-item" highlighted>
+          <span class="hourly-weather-info-time">{{ h.time | date: 'HH:mm' }}</span>
+          <span class="hourly-weather-info-temp">{{ h.temperature }}°</span>
+          <div class="hourly-weather-info-footer">
+            <span>{{ h.windSpeed }} km/h</span>
+            <span>{{ h.humidity }}%</span>
+          </div>
+        </div>
+      } @empty {
+        <p class="hourly-weather-info-empty">No more hours remaining today.</p>
+      }
+
+    </div>
+  } @else {
+    <p>Loading hourly weather information...</p>
+  }
+
+</div>
