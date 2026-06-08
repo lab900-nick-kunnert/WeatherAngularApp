@@ -1,4 +1,5 @@
 # WeatherAngularApp
+<img width="1280" height="625" alt="image" src="https://github.com/user-attachments/assets/d86150f4-6414-43e5-82ef-9a9e75cca5a2" />
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.13.
 
